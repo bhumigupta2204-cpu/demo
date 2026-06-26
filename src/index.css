@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-editorial-bg: #FFF5F6;
+  --color-editorial-text: #2C181C;
+  --color-editorial-accent-taupe: #C85C6E;
+  --color-editorial-accent-beige: #F9D0D6;
+  --color-editorial-light-warm: #FCE4E7;
+  --color-editorial-cream: #FFF0F2;
+}
+
+@layer base {
+  body {
+    background-color: #FFF5F6; /* editorial-bg */
+    color: #2C181C; /* editorial-text */
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  }
+}
+
+/* Selection color matching the palette */
+::selection {
+  background-color: #C85C6E;
+  color: #FFFFFF;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(2rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF5F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FCE4E7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C85C6E;
+}
